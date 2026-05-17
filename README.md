@@ -6,7 +6,7 @@
 
 # crucible
 
-*Another weapon from the MSL Armory.*
+*Another weapon from the MSL Armory*
 
 A tiny bash test runner. One file, no dependencies beyond bash 4+, drops into any repo.
 
