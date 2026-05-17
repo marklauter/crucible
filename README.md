@@ -1,4 +1,3 @@
-## Build Status
 [![tests](https://github.com/marklauter/crucible/actions/workflows/tests.yml/badge.svg)](https://github.com/marklauter/crucible/actions/workflows/tests.yml)
 [![bash](https://img.shields.io/badge/bash-4%2B-blue?logo=gnubash)](https://www.gnu.org/software/bash/)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
