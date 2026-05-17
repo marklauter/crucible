@@ -7,6 +7,8 @@
 
 # crucible
 
+*Another weapon in the MSL Armory.*
+
 A tiny bash test runner. One file, no dependencies beyond bash 4+, drops into any repo.
 
 ```
