@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "crucible",
+  "description": "A tiny bash test runner, packaged as a Claude Code plugin.",
+  "owner": {
+    "name": "MSL"
+  },
+  "plugins": [
+    {
+      "name": "crucible",
+      "description": "A skill that knows how to run a bash script to test bash scripts.",
+      "author": {
+        "name": "MSL"
+      },
+      "category": "testing",
+      "source": "./plugins/crucible"
+    }
+  ]
+}

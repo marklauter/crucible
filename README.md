@@ -8,16 +8,23 @@
 
 *Another weapon from the MSL Armory.*
 
-A tiny bash test runner. One file, no dependencies beyond bash 4+, drops into any repo.
+A tiny bash test runner, packaged as a Claude Code plugin. One file, no dependencies beyond bash 4+, drops into any repo.
 
 ```bash
-bash crucible.sh                  # discover *_test.sh under $PWD
-bash crucible.sh tests/           # discover under a specific dir
-bash crucible.sh tests/foo_test.sh
-bash crucible.sh --filter rename  # run only tests whose name matches regex
-bash crucible.sh --list           # enumerate discovered tests without running
-bash crucible.sh -v tests/        # on pass, also dump captured stdout/stderr
-bash crucible.sh --ascii          # use ok/FAIL/skip markers instead of ✓/✗/↷
+bash plugins/crucible/crucible.sh                  # discover *_test.sh under $PWD
+bash plugins/crucible/crucible.sh tests/           # discover under a specific dir
+bash plugins/crucible/crucible.sh tests/foo_test.sh
+bash plugins/crucible/crucible.sh --filter rename  # run only tests whose name matches regex
+bash plugins/crucible/crucible.sh --list           # enumerate discovered tests without running
+bash plugins/crucible/crucible.sh -v tests/        # on pass, also dump captured stdout/stderr
+bash plugins/crucible/crucible.sh --ascii          # use ok/FAIL/skip markers instead of ✓/✗/↷
+```
+
+Or install it as a plugin in Claude Code so the `writing-bash-tests` skill teaches the conventions:
+
+```text
+/plugin marketplace add <path-or-github-repo>
+/plugin install crucible@crucible
 ```
 
 A minimal test file:

@@ -26,11 +26,11 @@ jobs:
 
       - name: Run examples
         shell: bash
-        run: bash crucible.sh examples/
+        run: bash plugins/crucible/crucible.sh examples/
 
       - name: Run self-tests
         shell: bash
-        run: bash crucible.sh tests/
+        run: bash plugins/crucible/crucible.sh tests/
 
   shellcheck:
     runs-on: ubuntu-latest
@@ -40,4 +40,4 @@ jobs:
       - name: Install shellcheck
         run: sudo apt-get update && sudo apt-get install -y shellcheck
       - name: Run shellcheck
-        run: shellcheck --exclude=SC2329,SC2317 crucible.sh examples/*.sh tests/*.sh
+        run: shellcheck --exclude=SC2329,SC2317 plugins/crucible/crucible.sh examples/*.sh tests/*.sh

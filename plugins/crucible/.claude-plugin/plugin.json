@@ -1,0 +1,16 @@
+{
+  "name": "crucible",
+  "version": "0.1.0",
+  "description": "A tiny bash test runner — a skill that knows how to run a bash script to test bash scripts.",
+  "author": {
+    "name": "MSL"
+  },
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "bash",
+    "testing",
+    "test-runner",
+    "shell"
+  ]
+}

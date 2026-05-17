@@ -8,7 +8,7 @@
 # shellcheck disable=SC2016  # mk_test bodies are intentionally single-quoted (literal).
 # shellcheck disable=SC2103  # cd .. inside a test is fine; tests run in a subshell.
 
-CRUCIBLE="$PROJECT_ROOT/crucible.sh"
+CRUCIBLE="$PROJECT_ROOT/plugins/crucible/crucible.sh"
 
 # Write a test file into the current tmpdir and return its path.
 mk_test() {
