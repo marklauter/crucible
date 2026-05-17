@@ -3,6 +3,8 @@
 [![bash](https://img.shields.io/badge/bash-4%2B-blue?logo=gnubash)](https://www.gnu.org/software/bash/)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
+![MSL Armory](https://raw.githubusercontent.com/marklauter/crucible/main/images/msl.armory.small.png "MSL Armory")
+
 # crucible
 
 A tiny bash test runner. One file, no dependencies beyond bash 4+, drops into any repo.
