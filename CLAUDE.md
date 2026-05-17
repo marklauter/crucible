@@ -28,10 +28,10 @@ Project conventions and mechanical reminders for Claude sessions working on **cr
 
 ```bash
 bash crucible.sh examples/ tests/      # full suite — must be 45+ green
-shellcheck --exclude=SC2329 crucible.sh examples/*.sh tests/*.sh
+shellcheck --exclude=SC2329,SC2317 crucible.sh examples/*.sh tests/*.sh
 ```
 
-`SC2329` (unused function warning) is suppressed because every assertion and the `run` helper are invoked indirectly via sourcing — shellcheck cannot see those call sites.
+`SC2329` (unused function) and `SC2317` (unreachable code) are suppressed because every assertion and the `run` helper are invoked indirectly via sourcing — shellcheck cannot see those call sites, so it flags both the definitions and the bodies as dead.
 
 ## When adding a new flag
 
