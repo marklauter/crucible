@@ -1,11 +1,13 @@
 {
   "name": "crucible",
   "version": "0.1.0",
-  "description": "A tiny bash test runner — a skill that knows how to run a bash script to test bash scripts.",
+  "description": "Crucible is a tiny bash test runner. This plugin ships the runner alongside skills that teach an agent to write bash, test it, and run the suite.",
   "author": {
     "name": "MSL"
   },
   "license": "MIT",
+  "homepage": "https://github.com/marklauter/crucible/wiki",
+  "repository": "https://github.com/marklauter/crucible",
   "keywords": [
     "claude-code",
     "bash",
