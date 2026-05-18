@@ -7,7 +7,7 @@
 
 # crucible
 
-*Another weapon from the MSL Armory.*
+*Another weapon from the MSL Armory*
 
 A tiny bash test runner — one file, no dependencies beyond bash 4+. Use it as a standalone script, or install it as a Claude Code plugin and let the `writing-bash-tests` skill teach the conventions to your agent.
 
