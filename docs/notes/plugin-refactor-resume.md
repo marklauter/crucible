@@ -20,18 +20,16 @@ The framing that grounds every decision: the repo's identity is shifting from a 
 
 Scope is this repo only. The msl.armory migration is downstream and out of scope for this refactor's done-state.
 
-**HEAD commit:** `976c9fa` "package crucible as a claude code plugin" — layout move, manifests, stubbed SKILL, path updates. Branch is one commit ahead of `origin/main`; nothing pushed.
+**HEAD commit:** `3bb099a` — merge of local refactor commits with a remote README touch-up.
 
-**Uncommitted (working tree):**
+Recent history (newest first):
 
-- `.claude-plugin/marketplace.json` — marketplace name set to `msl.armory.crucible`.
-- `README.md` — rewritten for plugin identity, install section reordered to lead with `/plugin install`.
-- `plugins/crucible/.claude-plugin/plugin.json` — added `homepage` and `repository`; expanded description to cover the multi-skill scope.
-- `plugins/crucible/skills/writing-bash-tests/SKILL.md` — full body authored (Philosophy / Guidance / Validation); self-contained reference shape inlined.
-- `docs/notes/plugin-packaging-decisions.md` — new file capturing decisions for all resolved open questions.
-- `docs/notes/plugin-refactor-resume.md` — this note.
+- `3bb099a` Merge branch 'main' — integrates local refactor with the remote.
+- `ccf2692` flesh out the plugin: skill body, manifests, decisions — SKILL body, README rewrite, plugin.json polish, marketplace name set to `msl.armory.crucible`, decisions note, this resume note.
+- `0104a32` Update README.md — small remote touch-up (period removal in the tagline).
+- `976c9fa` package crucible as a claude code plugin — layout move, manifests, stubbed SKILL, path updates.
 
-All ready to commit when the open questions resolve and the doc review passes.
+Local and `origin/main` are in sync. Working tree clean.
 
 ## Open questions still to resolve
 
@@ -74,17 +72,16 @@ In suggested resolution order. Construct a fresh task list from this section at 
 
 1. **Resolve open question #26** (version-sync automation). Confirm Option A; implement the CI gate.
 2. **Resolve open question #27** (separate plugin README). Verify with docs or hands-on test; decide.
-3. **Run reviewing-documentation pass** over `README.md` and `plugins/crucible/skills/writing-bash-tests/SKILL.md`. Triage findings before committing. [was #28]
-4. **Commit the uncommitted files.** Subject roughly: *rewrite readme around plugin identity; author writing-bash-tests skill body; record packaging decisions*. Bundle the marketplace.json marketplace-name change, README rewrite, plugin.json polish, SKILL body, decisions note, and this resume note. [was #29]
-5. **Author `running-bash-tests` skill** at `plugins/crucible/skills/running-bash-tests/SKILL.md`. Operator's manual: invocation patterns, output interpretation, `--filter` / `--list` / `-v` use, common failure modes, how to teach a human collaborator. [was #39]
-6. **Author `writing-bash-scripts` skill** at `plugins/crucible/skills/writing-bash-scripts/SKILL.md`. Bash craftsmanship analogous to `writing-csharp` in msl.armory — idioms, hygiene, defensive patterns, style. [was #40]
-7. **Commit the two new skills.** [was #41]
-8. **Cold-test `writing-bash-tests`.** Spin a fresh agent with only that skill loaded, give it a small bash script it has not seen, ask for a `_test.sh` covering the script's behavior, run the generated test through crucible. Identify gaps in the SKILL — vague guidance, missing patterns, surprises — and patch the SKILL. Iterate until cold scaffolding consistently produces a working test. Cover at least two shapes: a script that prints to stdout, and a script with flags + stderr usage. [was #42]
-9. **Verify the plugin installs and loads locally.** User runs `/plugin marketplace add D:/crucible/crucible` then `/plugin install crucible@msl.armory.crucible` in a Claude Code session. Confirm skills surface; confirm `/crucible:writing-bash-tests` activates on a bash-test prompt. [was #34]
-10. **Update follow-ups note.** Audit `docs/notes/crucible-follow-ups-flagged-by-the-review-loop.md`; some items may be superseded by the plugin layout. [was #35]
-11. **Journal entry.** Use the `journaling` skill — dated entry under `docs/journal/` capturing the refactor: what shifted, why, what remains. [was #36]
-12. **Tag v0.2.0 release.** Bump `CRUCIBLE_VERSION` (crucible.sh) and `version` (plugin.json) to `0.2.0` together. Follow the `CLAUDE.md` release-bump checklist. Push origin main and the tag. [was #37]
-13. **Downstream — audit the crucible wiki** at `github.com/marklauter/crucible/wiki`. Installation page should mention `/plugin install crucible@msl.armory.crucible` alongside the curl method. Separate git repo from this one; not blocking the refactor's done state. [was #38]
+3. **Run reviewing-documentation pass** over `README.md` and `plugins/crucible/skills/writing-bash-tests/SKILL.md`. Triage findings; fix in a follow-up commit. [was #28]
+4. **Author `running-bash-tests` skill** at `plugins/crucible/skills/running-bash-tests/SKILL.md`. Operator's manual: invocation patterns, output interpretation, `--filter` / `--list` / `-v` use, common failure modes, how to teach a human collaborator. [was #39]
+5. **Author `writing-bash-scripts` skill** at `plugins/crucible/skills/writing-bash-scripts/SKILL.md`. Bash craftsmanship analogous to `writing-csharp` in msl.armory — idioms, hygiene, defensive patterns, style. [was #40]
+6. **Commit the two new skills.** [was #41]
+7. **Cold-test `writing-bash-tests`.** Spin a fresh agent with only that skill loaded, give it a small bash script it has not seen, ask for a `_test.sh` covering the script's behavior, run the generated test through crucible. Identify gaps in the SKILL — vague guidance, missing patterns, surprises — and patch the SKILL. Iterate until cold scaffolding consistently produces a working test. Cover at least two shapes: a script that prints to stdout, and a script with flags + stderr usage. [was #42]
+8. **Verify the plugin installs and loads locally.** User runs `/plugin marketplace add D:/crucible/crucible` then `/plugin install crucible@msl.armory.crucible` in a Claude Code session. Confirm skills surface; confirm `/crucible:writing-bash-tests` activates on a bash-test prompt. [was #34]
+9. **Update follow-ups note.** Audit `docs/notes/crucible-follow-ups-flagged-by-the-review-loop.md`; some items may be superseded by the plugin layout. [was #35]
+10. **Journal entry.** Use the `journaling` skill — dated entry under `docs/journal/` capturing the refactor: what shifted, why, what remains. [was #36]
+11. **Tag v0.2.0 release.** Bump `CRUCIBLE_VERSION` (crucible.sh) and `version` (plugin.json) to `0.2.0` together. Follow the `CLAUDE.md` release-bump checklist. Push origin main and the tag. [was #37]
+12. **Downstream — audit the crucible wiki** at `github.com/marklauter/crucible/wiki`. Installation page should mention `/plugin install crucible@msl.armory.crucible` alongside the curl method. Separate git repo from this one; not blocking the refactor's done state. [was #38]
 
 ## Decisions captured
 
@@ -108,15 +105,15 @@ Full reasoning lives in [[plugin-packaging-decisions]]. Summary below.
 - Layout move: `crucible.sh` relocated to `plugins/crucible/crucible.sh` (git history preserved via `git mv`).
 - Manifests: `.claude-plugin/marketplace.json` and `plugins/crucible/.claude-plugin/plugin.json` authored.
 - Path references updated in `.github/workflows/tests.yml`, `CLAUDE.md`, `README.md`, `tests/self_test.sh`.
-- Stub SKILL.md placed at `plugins/crucible/skills/writing-bash-tests/SKILL.md`.
-- Full SKILL body authored (uncommitted in working tree). Self-contained reference shape inlined.
+- Full `writing-bash-tests` SKILL.md authored — Philosophy / Guidance / Validation, with the canonical test-file shape inlined for self-containment.
 - README rewritten for plugin identity; install section reordered to lead with `/plugin install`.
 - `plugin.json` polished with `homepage`, `repository`, expanded description for the multi-skill scope.
 - Marketplace name decided and applied: `msl.armory.crucible`.
 - Decisions note authored at `docs/notes/plugin-packaging-decisions.md`.
+- Slash command format verified: skills are the modern path; `commands/` is legacy and not used in this plugin.
 - Suite verified green: 45 tests passing under the new layout; shellcheck clean.
 
-The HEAD commit (`976c9fa`) covers the layout move and path updates. Everything else listed above is in the working tree, ready to bundle into the commit that comes from pending-work item 4.
+All of the above is committed and pushed to `origin/main`. Working tree clean.
 
 ## Related notes
 
