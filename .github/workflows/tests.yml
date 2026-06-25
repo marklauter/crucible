@@ -18,7 +18,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     name: test (${{ matrix.os }})
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Show bash version
         shell: bash
@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     name: shellcheck
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install shellcheck
         run: sudo apt-get update && sudo apt-get install -y shellcheck
       - name: Run shellcheck
